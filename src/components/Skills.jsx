@@ -1,0 +1,105 @@
+import { motion } from 'framer-motion';
+import { FaHtml5, FaCss3Alt, FaJava, FaPython, FaDatabase, FaGitAlt, FaGithub, FaCode } from 'react-icons/fa';
+import './Skills.css';
+
+const skills = [
+    {
+        name: 'HTML5',
+        level: 'Advanced',
+        icon: <FaHtml5 size={32} color="#E34F26" />,
+    },
+    {
+        name: 'CSS3',
+        level: 'Advanced',
+        icon: <FaCss3Alt size={32} color="#1572B6" />,
+    },
+    {
+        name: 'Java (Core)',
+        level: 'Intermediate',
+        icon: <FaJava size={32} color="#ED8B00" />,
+    },
+    {
+        name: 'Python',
+        level: 'Basic',
+        icon: <FaPython size={32} color="#3776AB" />,
+    },
+    {
+        name: 'SQL',
+        level: 'Intermediate',
+        icon: <FaDatabase size={32} color="#336791" />,
+    },
+    {
+        name: 'DSA in Java',
+        level: 'Intermediate',
+        icon: <FaCode size={32} color="#A855F7" />,
+    },
+    {
+        name: 'Git',
+        level: 'Intermediate',
+        icon: <FaGitAlt size={32} color="#F05032" />,
+    },
+    {
+        name: 'GitHub',
+        level: 'Intermediate',
+        icon: <FaGithub size={32} color="#FFFFFF" />,
+    },
+];
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1, y: 0,
+        transition: { type: "spring", stiffness: 100 }
+    }
+};
+
+export default function Skills() {
+    return (
+        <section className="section" id="skills">
+            <div className="container">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <p className="section-title">Skills & Technologies</p>
+                    <p className="section-subtitle">
+                        Technologies I work with to bring ideas to life
+                    </p>
+                </motion.div>
+
+                <motion.div
+                    className="skills-grid"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                >
+                    {skills.map((skill) => (
+                        <motion.div
+                            key={skill.name}
+                            className="glass-card skill-card"
+                            variants={itemVariants}
+                            whileHover={{ y: -5, scale: 1.05 }}
+                        >
+                            <div className="skill-icon">{skill.icon}</div>
+                            <div className="skill-name">{skill.name}</div>
+                            <div className="skill-level">{skill.level}</div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
+        </section>
+    );
+}
