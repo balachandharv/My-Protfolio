@@ -1,57 +1,23 @@
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJava, FaPython, FaDatabase, FaGitAlt, FaGithub, FaCode } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaPython, FaDatabase, FaGitAlt, FaGithub } from 'react-icons/fa';
 import './Skills.css';
 
 const skills = [
-    {
-        name: 'HTML5',
-        level: 'Advanced',
-        icon: <FaHtml5 size={32} color="#E34F26" />,
-    },
-    {
-        name: 'CSS3',
-        level: 'Advanced',
-        icon: <FaCss3Alt size={32} color="#1572B6" />,
-    },
-    {
-        name: 'Java (Core)',
-        level: 'Intermediate',
-        icon: <FaJava size={32} color="#ED8B00" />,
-    },
-    {
-        name: 'Python',
-        level: 'Basic',
-        icon: <FaPython size={32} color="#3776AB" />,
-    },
-    {
-        name: 'SQL',
-        level: 'Intermediate',
-        icon: <FaDatabase size={32} color="#336791" />,
-    },
-    {
-        name: 'DSA in Java',
-        level: 'Intermediate',
-        icon: <FaCode size={32} color="#A855F7" />,
-    },
-    {
-        name: 'Git',
-        level: 'Intermediate',
-        icon: <FaGitAlt size={32} color="#F05032" />,
-    },
-    {
-        name: 'GitHub',
-        level: 'Intermediate',
-        icon: <FaGithub size={32} color="#181717" />,
-    },
+    { name: 'HTML5', level: '90%', icon: <FaHtml5 size={36} color="#E34F26" /> },
+    { name: 'CSS3', level: '85%', icon: <FaCss3Alt size={36} color="#1572B6" /> },
+    { name: 'React', level: '65%', icon: <FaReact size={36} color="#61DAFB" /> },
+    { name: 'Java (Core)', level: '75%', icon: <FaJava size={36} color="#ED8B00" /> },
+    { name: 'Python', level: '60%', icon: <FaPython size={36} color="#3776AB" /> },
+    { name: 'SQL', level: '70%', icon: <FaDatabase size={36} color="#336791" /> },
+    { name: 'Git', level: '85%', icon: <FaGitAlt size={36} color="#F05032" /> },
+    { name: 'GitHub', level: '85%', icon: <FaGithub size={36} color="#181717" /> },
 ];
 
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        transition: {
-            staggerChildren: 0.1
-        }
+        transition: { staggerChildren: 0.1 }
     }
 };
 
@@ -73,7 +39,7 @@ export default function Skills() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <p className="section-title">Skills & Technologies</p>
+                    <p className="section-title">Skills</p>
                     <p className="section-subtitle">
                         Technologies I work with to bring ideas to life
                     </p>
@@ -91,11 +57,20 @@ export default function Skills() {
                             key={skill.name}
                             className="glass-card skill-card"
                             variants={itemVariants}
-                            whileHover={{ y: -5, scale: 1.05 }}
+                            whileHover={{ y: -8 }}
                         >
                             <div className="skill-icon">{skill.icon}</div>
                             <div className="skill-name">{skill.name}</div>
-                            <div className="skill-level">{skill.level}</div>
+
+                            <div className="skill-bar-bg">
+                                <motion.div
+                                    className="skill-bar-fill"
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: skill.level }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                                ></motion.div>
+                            </div>
                         </motion.div>
                     ))}
                 </motion.div>

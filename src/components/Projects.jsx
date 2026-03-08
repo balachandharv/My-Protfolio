@@ -4,32 +4,23 @@ import './Projects.css';
 
 const projects = [
     {
-        title: 'Portfolio Website',
+        title: 'Lost and Found Application',
         description:
-            'A modern, responsive portfolio website built with React featuring smooth animations, dark theme, and glassmorphism design. Showcases projects, skills, and professional experience.',
-        tech: ['React', 'CSS3', 'JavaScript'],
-        emoji: '🌐',
-        github: 'https://github.com/balachandar',
-        live: '#',
-    },
-    {
-        title: 'E-Commerce Dashboard',
-        description:
-            'A comprehensive admin dashboard for an e-commerce platform with real-time analytics, product management, and order tracking functionality.',
+            'A full-stack web application designed to help users report and find lost items easily. Built with a React frontend, styling in CSS, and a Java backend.',
         tech: ['React', 'Java', 'CSS3'],
-        emoji: '🛒',
-        github: 'https://github.com/balachandar',
-        live: '#',
+        emoji: '🔍',
+        github: 'https://github.com/balachandharv/Lost-And-Found-Final',
+        live: 'https://github.com/balachandharv/Lost-And-Found-Final',
     },
     {
-        title: 'Task Management App',
+        title: 'Team Web Project',
         description:
-            'A full-featured task management application with drag-and-drop functionality, priority levels, due dates, and team collaboration features.',
-        tech: ['JavaScript', 'HTML5', 'CSS3'],
-        emoji: '✅',
-        github: 'https://github.com/balachandar',
-        live: '#',
-    },
+            'A collaborative full-stack application developed as a team. Showcases teamwork, version control via GitHub, and integrating a Java backend with a modern frontend.',
+        tech: ['React', 'Java', 'CSS3'],
+        emoji: '👥',
+        github: 'https://github.com/balachandharv/Teamproject',
+        live: 'https://github.com/balachandharv/Teamproject',
+    }
 ];
 
 const containerVariants = {
@@ -80,7 +71,29 @@ export default function Projects() {
                             variants={itemVariants}
                             whileHover={{ y: -8, scale: 1.02 }}
                         >
-                            <div className="project-image">{project.emoji}</div>
+                            <div className="project-image">
+                                <span className="project-emoji">{project.emoji}</span>
+                                <div className="project-overlay">
+                                    <div className="project-links">
+                                        <a
+                                            href={project.live}
+                                            className="btn-primary project-btn pulse-glow"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <FaExternalLinkAlt size={14} /> View Project
+                                        </a>
+                                        <a
+                                            href={project.github}
+                                            className="btn-secondary project-btn"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <FaGithub size={14} /> GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="project-info">
                                 <h3 className="project-title">{project.title}</h3>
                                 <p className="project-description">{project.description}</p>
@@ -88,26 +101,6 @@ export default function Projects() {
                                     {project.tech.map((t) => (
                                         <span key={t} className="tech-tag">{t}</span>
                                     ))}
-                                </div>
-                                <div className="project-links">
-                                    <a
-                                        href={project.github}
-                                        className="project-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <FaGithub size={18} />
-                                        GitHub
-                                    </a>
-                                    <a
-                                        href={project.live}
-                                        className="project-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <FaExternalLinkAlt size={16} />
-                                        Live Demo
-                                    </a>
                                 </div>
                             </div>
                         </motion.div>

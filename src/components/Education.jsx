@@ -3,23 +3,17 @@ import './Education.css';
 
 const education = [
     {
-        year: '2022 – 2026',
+        year: '2023 – 2027',
         degree: 'B.Tech in Information Technology',
-        school: 'University College of Engineering, Madurai',
-        details: 'Focused on software development, web technologies, and data structures.',
+        school: 'P.S.R. Engineering College, Sivakasi (Autonomous, Affiliated to Anna University)',
+        details: 'Currently in my pre-final year, focusing on software development, web technologies, and problem-solving.',
     },
     {
-        year: '2020 – 2022',
+        year: 'Passed out: March 2023',
         degree: 'Higher Secondary Education (HSC)',
-        school: 'Madurai, Tamil Nadu',
-        details: 'Completed with a focus on Computer Science and Mathematics.',
-    },
-    {
-        year: '2019 – 2020',
-        degree: 'Secondary Education (SSLC)',
-        school: 'Madurai, Tamil Nadu',
-        details: 'Completed with distinction.',
-    },
+        school: 'Thiagarajar Model Higher Secondary School, Madurai, Tamil Nadu',
+        details: 'Developed a strong analytical foundation with a primary focus on Mathematics and Sciences.',
+    }
 ];
 
 const containerVariants = {

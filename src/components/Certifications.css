@@ -35,7 +35,7 @@
     width: 48px;
     height: 48px;
     border-radius: var(--radius-md);
-    background: rgba(0, 212, 255, 0.08);
+    background: rgba(37, 99, 235, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +51,7 @@
 }
 
 .cert-issuer {
-    color: var(--accent-cyan);
+    color: var(--accent-primary);
     font-size: 0.88rem;
     font-weight: 500;
     margin-bottom: 4px;
@@ -65,5 +65,15 @@
 @media (max-width: 768px) {
     .certifications-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .cert-card {
+        padding: 20px;
+    }
+
+    .cert-title {
+        font-size: 0.95rem;
     }
 }

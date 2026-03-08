@@ -10,7 +10,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+    background: linear-gradient(to bottom, var(--accent-primary), var(--accent-hover));
     opacity: 0.3;
 }
 
@@ -43,11 +43,11 @@
 .timeline-year {
     font-size: 0.82rem;
     font-weight: 600;
-    color: var(--accent-cyan);
+    color: var(--accent-primary);
     margin-bottom: 8px;
     display: inline-block;
     padding: 4px 12px;
-    background: rgba(0, 212, 255, 0.08);
+    background: rgba(37, 99, 235, 0.08);
     border-radius: 20px;
 }
 
@@ -69,6 +69,20 @@
     font-size: 0.88rem;
 }
 
+@media (max-width: 768px) {
+    .education-timeline {
+        max-width: 100%;
+    }
+
+    .timeline-card {
+        padding: 20px;
+    }
+
+    .timeline-degree {
+        font-size: 1.05rem;
+    }
+}
+
 @media (max-width: 480px) {
     .education-timeline::before {
         left: 16px;
@@ -80,5 +94,19 @@
 
     .timeline-dot {
         left: 8px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .timeline-card {
+        padding: 16px;
+    }
+
+    .timeline-degree {
+        font-size: 1rem;
+    }
+
+    .timeline-school {
+        font-size: 0.88rem;
     }
 }

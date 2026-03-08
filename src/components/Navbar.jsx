@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import './Navbar.css';
 
 const navLinks = [
+    { label: 'Home', href: '#hero' },
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
@@ -31,7 +32,9 @@ export default function Navbar() {
             transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
         >
             <div className="navbar-inner">
-                <a href="#hero" className="navbar-logo">&lt;Bala /&gt;</a>
+                <a href="#hero" className="navbar-logo">
+                    <img src="/WhatsApp_Image_2026-03-08_at_1.28.50_PM-removebg-preview.png" alt="Bala Logo" />
+                </a>
 
                 <button
                     className={`navbar-toggle ${menuOpen ? 'active' : ''}`}
@@ -52,7 +55,7 @@ export default function Navbar() {
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 * index + 0.3 }}
-                            whileHover={{ scale: 1.1, color: "var(--accent-cyan)" }}
+                            whileHover={{ scale: 1.1, color: "var(--accent-primary)" }}
                         >
                             {link.label}
                         </motion.a>

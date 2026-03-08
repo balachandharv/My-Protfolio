@@ -3,22 +3,34 @@ import './Certifications.css';
 
 const certifications = [
     {
-        title: 'Responsive Web Design',
-        issuer: 'freeCodeCamp',
-        date: '2025',
-        icon: '🏆',
+        title: 'Big Data Computing',
+        issuer: 'NPTEL',
+        date: 'Passed',
+        icon: '📊',
     },
     {
-        title: 'JavaScript Algorithms & Data Structures',
-        issuer: 'freeCodeCamp',
-        date: '2025',
-        icon: '📜',
+        title: 'Introduction to IoT',
+        issuer: 'NPTEL',
+        date: 'Passed',
+        icon: '🌐',
     },
     {
-        title: 'React Basics',
-        issuer: 'Meta (Coursera)',
-        date: '2025',
-        icon: '⚛️',
+        title: 'AI & ML Intern',
+        issuer: 'Phoenix Soft Tech, Madurai',
+        date: 'Internship',
+        icon: '🤖',
+    },
+    {
+        title: 'Java Developer Intern',
+        issuer: 'Web Walk Infosys, Madurai',
+        date: 'Internship',
+        icon: '☕',
+    },
+    {
+        title: 'Mobile App Developer Intern',
+        issuer: 'NBase IT Solutions, Madurai',
+        date: 'Internship',
+        icon: '📱',
     },
 ];
 
@@ -54,9 +66,9 @@ export default function Certifications() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <p className="section-title">Certifications</p>
+                    <p className="section-title">Certifications & Internships</p>
                     <p className="section-subtitle">
-                        Professional certifications and achievements
+                        My professional certifications and early work experiences
                     </p>
                 </motion.div>
 

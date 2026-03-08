@@ -12,13 +12,13 @@
 
 .project-card:hover {
     transform: translateY(-6px);
-    border-color: var(--accent-cyan);
-    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.1);
+    border-color: var(--accent-primary);
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.1);
 }
 
 .project-image {
     height: 200px;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(123, 47, 247, 0.1));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(79, 70, 229, 0.1));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,17 +27,72 @@
     overflow: hidden;
 }
 
-.project-image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--accent-gradient);
-    opacity: 0;
-    transition: opacity var(--transition-normal);
+.project-emoji {
+    font-size: 4rem;
+    z-index: 1;
+    transition: transform var(--transition-normal);
 }
 
-.project-card:hover .project-image::after {
-    opacity: 0.08;
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: 2;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card:hover .project-emoji {
+    transform: scale(0.8) translateY(-20px);
+    opacity: 0.3;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transform: translateY(20px);
+    transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-links {
+    transform: translateY(0);
+}
+
+.project-btn {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* GitHub button on dark overlay - make it visible */
+.project-overlay .btn-secondary.project-btn {
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+}
+
+.project-overlay .btn-secondary.project-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
 }
 
 .project-info {
@@ -62,45 +117,46 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 20px;
+    /* Removed bottom margin as the links are no longer here */
 }
 
 .tech-tag {
     padding: 4px 12px;
-    background: rgba(0, 212, 255, 0.08);
-    border: 1px solid rgba(0, 212, 255, 0.15);
+    background: rgba(37, 99, 235, 0.08);
+    /* Updated to deep blue accent */
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    /* Updated to deep blue accent */
     border-radius: 20px;
     font-size: 0.78rem;
-    color: var(--accent-cyan);
+    color: var(--accent-primary);
+    /* Updated to primary accent */
     font-weight: 500;
-}
-
-.project-links {
-    display: flex;
-    gap: 12px;
-}
-
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    transition: color var(--transition-fast);
-}
-
-.project-link:hover {
-    color: var(--accent-cyan);
-}
-
-.project-link svg {
-    width: 16px;
-    height: 16px;
 }
 
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-image {
+        height: 160px;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+    }
+
+    .project-description {
+        font-size: 0.88rem;
+    }
+
+    .project-info {
+        padding: 16px;
     }
 }

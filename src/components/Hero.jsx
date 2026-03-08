@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaDownload } from 'react-icons/fa';
+import { FaArrowRight, FaDownload, FaEye } from 'react-icons/fa';
 import './Hero.css';
 
-const roles = ['Java Developer', 'Problem Solver'];
+const roles = ['Developer', 'Designer', 'Student', 'Problem Solver'];
 
 export default function Hero() {
     const [roleIndex, setRoleIndex] = useState(0);
@@ -51,7 +51,7 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                 >
-                    👋 Hello, I'm
+                    Hi, I'm
                 </motion.p>
 
                 <motion.h1
@@ -94,31 +94,27 @@ export default function Hero() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <span>View Projects</span>
+                        <span>View My Work</span>
                         <FaArrowRight size={16} />
                     </motion.a>
-                    <motion.button
-                        onClick={() => {
-                            fetch('/Bala_Resume.pdf')
-                                .then(res => res.blob())
-                                .then(blob => {
-                                    const url = window.URL.createObjectURL(blob);
-                                    const a = document.createElement('a');
-                                    a.href = url;
-                                    a.download = 'Bala_Resume.pdf';
-                                    document.body.appendChild(a);
-                                    a.click();
-                                    document.body.removeChild(a);
-                                    window.URL.revokeObjectURL(url);
-                                });
-                        }}
+                    <motion.a
+                        href="/Bala_Resume.pdf"
+                        download="Bala_Resume.pdf"
+                        className="btn-resume"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <FaDownload size={14} />
+                        <span>Download Resume</span>
+                    </motion.a>
+                    <motion.a
+                        href="#contact"
                         className="btn-secondary"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <FaDownload size={16} />
-                        <span>Download Resume</span>
-                    </motion.button>
+                        <span>Contact Me</span>
+                    </motion.a>
                 </motion.div>
             </motion.div>
 

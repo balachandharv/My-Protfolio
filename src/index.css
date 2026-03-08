@@ -1,32 +1,46 @@
 /* ===== CSS Design System ===== */
 :root {
-    /* Colors - Light Professional Theme */
-    --bg-primary: #F8FAFC;
-    /* Light gray/blue tint */
-    --bg-secondary: #FFFFFF;
-    /* Pure white */
-    --bg-card: #FFFFFF;
+    /* User Requested Theme Variables */
+    --primary: #2563EB;
+    --primary-hover: #1E40AF;
+    --secondary: #4F46E5;
+
+    --bg-main: #F8FAFC;
+    --bg-section: #FFFFFF;
+    --bg-dark: #0F172A;
+
+    --text-main: #0F172A;
+    --text-paragraph: #475569;
+    --text-light: #94A3B8;
+
+    --card-bg: #FFFFFF;
+    --card-border: #E2E8F0;
+
+    --accent-cyan: #06B6D4;
+    --accent-green: #22C55E;
+    --accent-orange: #F59E0B;
+
+    /* Mapped Compatibility Variables */
+    --bg-primary: var(--bg-main);
+    --bg-secondary: var(--bg-section);
+    --bg-card: var(--card-bg);
     --bg-card-hover: #F1F5F9;
-    --bg-glass: rgba(255, 255, 255, 0.8);
-    --border-glass: rgba(15, 23, 42, 0.05);
-    --border-glass-hover: rgba(59, 130, 246, 0.2);
+    --bg-glass: rgba(255, 255, 255, 0.9);
+    --border-glass: var(--card-border);
+    --border-glass-hover: var(--primary);
 
-    --text-primary: #0F172A;
-    /* Dark navy/black */
-    --text-secondary: #475569;
-    /* Medium gray */
-    --text-muted: #94A3B8;
+    --text-primary: var(--text-main);
+    --text-secondary: var(--text-paragraph);
+    --text-muted: var(--text-light);
 
-    --accent-primary: #3B82F6;
-    /* Professional Blue */
-    --accent-hover: #2563EB;
-    /* Darker Blue */
-    --accent-gradient: linear-gradient(135deg, #3B82F6, #8B5CF6);
-    --accent-gradient-hover: linear-gradient(135deg, #8B5CF6, #3B82F6);
+    --accent-primary: var(--primary);
+    --accent-hover: var(--primary-hover);
+    --accent-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    --accent-gradient-hover: linear-gradient(135deg, var(--secondary), var(--primary));
 
     /* Typography */
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Space Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
 
     /* Spacing */
     --section-padding: 100px 0;
@@ -212,6 +226,7 @@ textarea {
 @media (max-width: 768px) {
     :root {
         --section-padding: 60px 0;
+        --container-padding: 0 20px;
     }
 
     .section-title {
@@ -225,7 +240,17 @@ textarea {
 }
 
 @media (max-width: 480px) {
+    :root {
+        --section-padding: 48px 0;
+        --container-padding: 0 16px;
+    }
+
     .section-title {
         font-size: 1.7rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.92rem;
+        margin-bottom: 32px;
     }
 }
