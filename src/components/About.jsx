@@ -18,7 +18,7 @@ export default function About() {
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                            <div className="about-image-placeholder">👨‍💻</div>
+                            <img src="/balaPic.jpg" alt="Balachandar" className="about-photo" />
                         </motion.div>
                         <div className="about-image-decoration"></div>
                     </div>
@@ -27,17 +27,10 @@ export default function About() {
                         <p className="section-title" style={{ textAlign: 'left' }}>About Me</p>
                         <h3>Passionate Developer Based in Madurai, India</h3>
                         <p>
-                            I'm Balachandar, a final-year Information Technology student with a deep
-                            passion for frontend development. I love transforming ideas into pixel-perfect,
-                            interactive web experiences using modern technologies like React, JavaScript,
-                            and CSS.
+                            I’m Balachandar, a third-year Information Technology student at PSR Engineering College, Sivakasi, India. I have a strong interest in software development and enjoy working with Java and SQL to solve programming problems.
                         </p>
                         <p>
-                            My journey in web development started with curiosity about how websites work,
-                            and it has evolved into a professional passion. I enjoy building clean,
-                            responsive interfaces that provide seamless user experiences. When I'm not
-                            coding, I'm exploring new frameworks and design trends to stay ahead in the
-                            ever-evolving tech landscape.
+                            I continuously improve my coding and problem-solving skills through practice and small projects. I am currently looking for internship or entry-level opportunities where I can gain real-world experience and grow as a software developer.
                         </p>
 
                         <div className="about-highlights">
@@ -46,7 +39,7 @@ export default function About() {
                                 whileHover={{ y: -5, scale: 1.05 }}
                                 transition={{ type: "spring", stiffness: 300 }}
                             >
-                                <div className="highlight-number">5+</div>
+                                <div className="highlight-number">3+</div>
                                 <div className="highlight-label">Projects Completed</div>
                             </motion.div>
                             <motion.div
@@ -54,7 +47,7 @@ export default function About() {
                                 whileHover={{ y: -5, scale: 1.05 }}
                                 transition={{ type: "spring", stiffness: 300 }}
                             >
-                                <div className="highlight-number">7+</div>
+                                <div className="highlight-number">8+</div>
                                 <div className="highlight-label">Technologies</div>
                             </motion.div>
                             <motion.div
@@ -62,7 +55,7 @@ export default function About() {
                                 whileHover={{ y: -5, scale: 1.05 }}
                                 transition={{ type: "spring", stiffness: 300 }}
                             >
-                                <div className="highlight-number">3+</div>
+                                <div className="highlight-number">5+</div>
                                 <div className="highlight-label">Certifications</div>
                             </motion.div>
                         </div>

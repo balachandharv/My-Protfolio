@@ -3,28 +3,41 @@
     top: 0;
     left: 0;
     right: 0;
+    display: flex;
+    justify-content: center;
     z-index: 1000;
     padding: 0 24px;
-    transition: all var(--transition-normal);
+    transition: all 0.4s ease;
 }
 
 .navbar.scrolled {
-    background: rgba(248, 250, 252, 0.95);
-    /* Light grayish-blue for light theme */
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-glass);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    /* Added slight shadow for visibility */
+    padding-top: 20px;
 }
 
 .navbar-inner {
+    width: 100%;
     max-width: var(--container-width);
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 72px;
+    transition: all 0.4s ease;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+}
+
+.navbar.scrolled .navbar-inner {
+    max-width: 900px;
+    /* Bubble width */
+    height: 64px;
+    padding: 0 32px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glass);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .navbar-logo {
@@ -108,16 +121,18 @@
 
     .navbar-links {
         position: fixed;
-        top: 72px;
-        left: 0;
-        right: 0;
+        top: 90px;
+        left: 20px;
+        right: 20px;
+        border-radius: 20px;
         flex-direction: column;
-        background: rgba(10, 10, 26, 0.95);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         padding: 24px;
         gap: 20px;
-        border-bottom: 1px solid var(--border-glass);
+        border: 1px solid var(--border-glass);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         transform: translateY(-120%);
         transition: transform var(--transition-normal);
         opacity: 0;

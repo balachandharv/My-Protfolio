@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaArrowRight, FaDownload } from 'react-icons/fa';
 import './Hero.css';
 
-const roles = ['Frontend Developer', 'React Enthusiast', 'UI/UX Lover', 'Problem Solver'];
+const roles = ['Java Developer', 'Problem Solver'];
 
 export default function Hero() {
     const [roleIndex, setRoleIndex] = useState(0);
@@ -15,10 +15,12 @@ export default function Hero() {
         let timeout;
 
         if (!isDeleting && displayText === currentRole) {
-            timeout = setTimeout(() => setIsDeleting(true), 2000);
+            timeout = setTimeout(() => setIsDeleting(true), 3000); // 3 seconds pasue so people can read it clearly
         } else if (isDeleting && displayText === '') {
-            setIsDeleting(false);
-            setRoleIndex((prev) => (prev + 1) % roles.length);
+            timeout = setTimeout(() => {
+                setIsDeleting(false);
+                setRoleIndex((prev) => (prev + 1) % roles.length);
+            }, 1000); // 1 second break before the next text starts typing
         } else {
             timeout = setTimeout(() => {
                 setDisplayText(
@@ -26,7 +28,7 @@ export default function Hero() {
                         ? currentRole.substring(0, displayText.length - 1)
                         : currentRole.substring(0, displayText.length + 1)
                 );
-            }, isDeleting ? 40 : 80);
+            }, isDeleting ? 80 : 180); // Typed out slower, deleted slightly faster
         }
 
         return () => clearTimeout(timeout);
@@ -77,8 +79,7 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.6 }}
                 >
-                    A passionate final-year IT student from Madurai, India, crafting beautiful
-                    and responsive web experiences with modern technologies.
+                    Pre-final year IT student with strong fundamentals in Java and SQL. Passionate about solving problems and building efficient software solutions. Currently seeking internship or entry-level opportunities to grow as a developer.
                 </motion.p>
 
                 <motion.div
@@ -96,15 +97,28 @@ export default function Hero() {
                         <span>View Projects</span>
                         <FaArrowRight size={16} />
                     </motion.a>
-                    <motion.a
-                        href="#contact"
+                    <motion.button
+                        onClick={() => {
+                            fetch('/Bala_Resume.pdf')
+                                .then(res => res.blob())
+                                .then(blob => {
+                                    const url = window.URL.createObjectURL(blob);
+                                    const a = document.createElement('a');
+                                    a.href = url;
+                                    a.download = 'Bala_Resume.pdf';
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    document.body.removeChild(a);
+                                    window.URL.revokeObjectURL(url);
+                                });
+                        }}
                         className="btn-secondary"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
                         <FaDownload size={16} />
                         <span>Download Resume</span>
-                    </motion.a>
+                    </motion.button>
                 </motion.div>
             </motion.div>
 

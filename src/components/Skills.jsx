@@ -41,7 +41,7 @@ const skills = [
     {
         name: 'GitHub',
         level: 'Intermediate',
-        icon: <FaGithub size={32} color="#FFFFFF" />,
+        icon: <FaGithub size={32} color="#181717" />,
     },
 ];
 

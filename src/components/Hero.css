@@ -31,6 +31,10 @@
 .hero-content {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-greeting {
@@ -113,7 +117,8 @@
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+    /* Updated glowing shadow color for light theme */
 }
 
 .btn-secondary {
@@ -131,8 +136,9 @@
 }
 
 .btn-secondary:hover {
-    border-color: var(--accent-cyan);
-    background: rgba(0, 212, 255, 0.08);
+    border-color: var(--accent-primary);
+    background: rgba(59, 130, 246, 0.08);
+    /* Updated hover effect color */
     transform: translateY(-2px);
 }
 
