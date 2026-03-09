@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0;
+    gap: 8px;
     position: relative;
     background: rgba(253, 251, 247, 0.8);
     /* Warm Frosted glass */
@@ -33,18 +33,9 @@
     box-shadow: 0 4px 20px rgba(27, 20, 16, 0.05);
 }
 
-/* Connecting line inside pill */
+/* Connecting line removed for pill design */
 .scroll-nav__track::before {
-    content: '';
-    position: absolute;
-    top: 24px;
-    bottom: 24px;
-    left: 50%;
-    width: 2px;
-    background: #E8DCC8;
-    border-radius: 1px;
-    transform: translateX(-50%);
-    z-index: 0;
+    display: none;
 }
 
 .scroll-nav__dot {
@@ -76,14 +67,14 @@
     }
 }
 
-/* Inactive brown ticks */
+/* Inactive dots */
 .scroll-nav__dot-inner {
-    width: 16px;
-    height: 3px;
-    border-radius: 2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
     background: #D4C3B3;
     /* Light brownish accent */
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     z-index: 2;
     border: none;
@@ -92,18 +83,19 @@
 .scroll-nav__dot:hover .scroll-nav__dot-inner {
     background: #C19A6B;
     /* Gold/Brown hover */
-    width: 22px;
-    box-shadow: 0 0 10px rgba(193, 154, 107, 0.3);
+    transform: scale(1.6);
+    box-shadow: 0 0 10px rgba(193, 154, 107, 0.4);
 }
 
 .scroll-nav__dot--active .scroll-nav__dot-inner {
-    width: 28px;
-    height: 4px;
+    width: 6px;
+    height: 24px;
+    border-radius: 12px;
     background: #C19A6B;
     /* Active Gold/Brown */
     box-shadow:
-        0 0 12px rgba(193, 154, 107, 0.4),
-        0 0 24px rgba(193, 154, 107, 0.1);
+        0 0 12px rgba(193, 154, 107, 0.5),
+        0 0 20px rgba(193, 154, 107, 0.2);
 }
 
 .scroll-nav__label {
@@ -161,11 +153,13 @@
     }
 
     .scroll-nav__dot-inner {
-        width: 14px;
+        width: 6px;
+        height: 6px;
     }
 
     .scroll-nav__dot--active .scroll-nav__dot-inner {
-        width: 22px;
+        width: 6px;
+        height: 20px;
     }
 
     .scroll-nav__label {
@@ -188,12 +182,12 @@
     }
 
     .scroll-nav__dot-inner {
-        width: 12px;
-        height: 3px;
+        width: 5px;
+        height: 5px;
     }
 
     .scroll-nav__dot--active .scroll-nav__dot-inner {
-        width: 18px;
-        height: 3px;
+        width: 5px;
+        height: 16px;
     }
 }
