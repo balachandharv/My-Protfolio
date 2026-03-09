@@ -1,36 +1,37 @@
 import { motion } from 'framer-motion';
+import { FaJava, FaMobileAlt, FaBrain, FaGraduationCap } from 'react-icons/fa';
 import './Certifications.css';
 
 const certifications = [
     {
-        title: 'Big Data Computing',
-        issuer: 'NPTEL',
-        date: 'Passed',
-        icon: '📊',
-    },
-    {
-        title: 'Introduction to IoT',
-        issuer: 'NPTEL',
-        date: 'Passed',
-        icon: '🌐',
-    },
-    {
         title: 'AI & ML Intern',
         issuer: 'Phoenix Soft Tech, Madurai',
         date: 'Internship',
-        icon: '🤖',
+        icon: <FaBrain size={28} color="#8b5cf6" />,
     },
     {
         title: 'Java Developer Intern',
         issuer: 'Web Walk Infosys, Madurai',
         date: 'Internship',
-        icon: '☕',
+        icon: <FaJava size={28} color="#ED8B00" />,
     },
     {
         title: 'Mobile App Developer Intern',
         issuer: 'NBase IT Solutions, Madurai',
         date: 'Internship',
-        icon: '📱',
+        icon: <FaMobileAlt size={28} color="#10b981" />,
+    },
+    {
+        title: 'Big Data Computing',
+        issuer: 'NPTEL',
+        date: 'Passed',
+        icon: <FaGraduationCap size={28} color="#1a73e8" />,
+    },
+    {
+        title: 'Introduction to IoT',
+        issuer: 'NPTEL',
+        date: 'Passed',
+        icon: <FaGraduationCap size={28} color="#1a73e8" />,
     },
 ];
 

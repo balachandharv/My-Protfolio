@@ -19,7 +19,7 @@ export default function About() {
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                            <img src="/balaPic.jpg" alt="Balachandar Profile" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', borderRadius: '50%' }} />
+                            <img src="/balaPic.jpg" alt="Balachandhar Profile" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', borderRadius: '50%' }} />
                         </motion.div>
                         <div className="about-image-decoration"></div>
                     </div>
@@ -28,7 +28,7 @@ export default function About() {
                         <p className="section-title" style={{ textAlign: 'left' }}>About Me</p>
                         <h3>Passionate Developer Based in Madurai, India</h3>
                         <p>
-                            I'm Balachandar, a third-year Information Technology student at PSR Engineering College, Sivakasi, India. I have a strong interest in software development and enjoy working with Java and SQL to solve programming problems.
+                            I'm Balachandhar, a third-year Information Technology student at PSR Engineering College, Sivakasi, India. I have a strong interest in software development and enjoy working with Java and SQL to solve programming problems.
                         </p>
                         <p>
                             I continuously improve my coding and problem-solving skills through practice and small projects. I am currently looking for internship or entry-level opportunities where I can gain real-world experience and grow as a software developer.
@@ -72,7 +72,7 @@ export default function About() {
                                 whileHover={{ y: -5, scale: 1.05 }}
                                 transition={{ type: "spring", stiffness: 300 }}
                             >
-                                <div className="highlight-number">8+</div>
+                                <div className="highlight-number">6+</div>
                                 <div className="highlight-label">Technologies</div>
                             </motion.div>
                             <motion.div

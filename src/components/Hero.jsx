@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaDownload, FaEye } from 'react-icons/fa';
+import { FaArrowRight, FaDownload } from 'react-icons/fa';
 import './Hero.css';
 
 const roles = ['Developer', 'Designer', 'Student', 'Problem Solver'];
@@ -60,7 +60,7 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.6 }}
                 >
-                    <span className="gradient-text">Balachandar</span>
+                    <span className="gradient-text">Balachandhar</span>
                 </motion.h1>
 
                 <motion.h2
@@ -79,7 +79,7 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.6 }}
                 >
-                    Pre-final year IT student with strong fundamentals in Java and SQL. Passionate about solving problems and building efficient software solutions. Currently seeking internship or entry-level opportunities to grow as a developer.
+                    An aspiring software developer with a passion for building clean and efficient solutions. Currently a pre-final year Information Technology student at PSR Engineering College. Eager to learn, contribute, and grow through real-world opportunities.
                 </motion.p>
 
                 <motion.div

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 import './Contact.css';
 
 export default function Contact() {
@@ -88,6 +89,16 @@ export default function Contact() {
                                 whileHover={{ y: -3, scale: 1.1 }}
                             >
                                 <FaLinkedin size={24} />
+                            </motion.a>
+                            <motion.a
+                                href="https://leetcode.com/u/Balachandhar_V/"
+                                className="social-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LeetCode"
+                                whileHover={{ y: -3, scale: 1.1 }}
+                            >
+                                <SiLeetcode size={24} />
                             </motion.a>
                         </div>
                     </div>

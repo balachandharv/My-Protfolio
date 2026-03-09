@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaSearch, FaUsers } from 'react-icons/fa';
 import './Projects.css';
 
 const projects = [
@@ -8,7 +8,7 @@ const projects = [
         description:
             'A full-stack web application designed to help users report and find lost items easily. Built with a React frontend, styling in CSS, and a Java backend.',
         tech: ['React', 'Java', 'CSS3'],
-        emoji: '🔍',
+        icon: <FaSearch size={32} color="#2563EB" />,
         github: 'https://github.com/balachandharv/Lost-And-Found-Final',
         live: 'https://github.com/balachandharv/Lost-And-Found-Final',
     },
@@ -17,7 +17,7 @@ const projects = [
         description:
             'A collaborative full-stack application developed as a team. Showcases teamwork, version control via GitHub, and integrating a Java backend with a modern frontend.',
         tech: ['React', 'Java', 'CSS3'],
-        emoji: '👥',
+        icon: <FaUsers size={32} color="#2563EB" />,
         github: 'https://github.com/balachandharv/Teamproject',
         live: 'https://github.com/balachandharv/Teamproject',
     }
@@ -72,7 +72,7 @@ export default function Projects() {
                             whileHover={{ y: -8, scale: 1.02 }}
                         >
                             <div className="project-image">
-                                <span className="project-emoji">{project.emoji}</span>
+                                <span className="project-emoji">{project.icon}</span>
                                 <div className="project-overlay">
                                     <div className="project-links">
                                         <a

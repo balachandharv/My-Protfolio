@@ -1,42 +1,44 @@
-/* ===== CSS Design System ===== */
+/* ===== CSS Design System — Warm Elegant Light Theme ===== */
 :root {
-    /* User Requested Theme Variables */
-    --primary: #2563EB;
-    --primary-hover: #1E40AF;
-    --secondary: #4F46E5;
+    /* Warm Elegant Light Palette */
+    --primary: #C19A6B;
+    --primary-hover: #A8814F;
+    --secondary: #8B6B4A;
 
-    --bg-main: #F8FAFC;
-    --bg-section: #FFFFFF;
-    --bg-dark: #0F172A;
+    --bg-main: #FDFBF7;
+    /* Very light cream */
+    --bg-section: #F5EFE6;
+    /* Light beige for alternating sections */
+    --bg-dark: #1B1410;
+    /* Dark contrast */
 
-    --text-main: #0F172A;
-    --text-paragraph: #475569;
-    --text-light: #94A3B8;
+    --text-main: #2A1F18;
+    /* Near black / dark brown */
+    --text-paragraph: #5C4E43;
+    /* Medium brown */
+    --text-light: #8B7A6D;
+    /* Light brown/grey */
 
     --card-bg: #FFFFFF;
-    --card-border: #E2E8F0;
+    --card-border: #E8DCC8;
 
-    --accent-cyan: #06B6D4;
-    --accent-green: #22C55E;
-    --accent-orange: #F59E0B;
+    --accent-primary: var(--primary);
+    --accent-hover: var(--primary-hover);
+    --accent-gradient: linear-gradient(135deg, #C19A6B, #8B6B4A);
+    --accent-gradient-hover: linear-gradient(135deg, #8B6B4A, #C19A6B);
 
     /* Mapped Compatibility Variables */
     --bg-primary: var(--bg-main);
     --bg-secondary: var(--bg-section);
     --bg-card: var(--card-bg);
-    --bg-card-hover: #F1F5F9;
-    --bg-glass: rgba(255, 255, 255, 0.9);
+    --bg-card-hover: #FDFBF7;
+    --bg-glass: rgba(255, 255, 255, 0.85);
     --border-glass: var(--card-border);
     --border-glass-hover: var(--primary);
 
     --text-primary: var(--text-main);
     --text-secondary: var(--text-paragraph);
     --text-muted: var(--text-light);
-
-    --accent-primary: var(--primary);
-    --accent-hover: var(--primary-hover);
-    --accent-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-    --accent-gradient-hover: linear-gradient(135deg, var(--secondary), var(--primary));
 
     /* Typography */
     --font-heading: 'Space Mono', monospace;
@@ -122,6 +124,11 @@ textarea {
 .section {
     padding: var(--section-padding);
     position: relative;
+    background-color: var(--bg-secondary);
+}
+
+.section:nth-child(even) {
+    background-color: var(--bg-primary);
 }
 
 .section-title {
@@ -155,6 +162,7 @@ textarea {
     background: var(--bg-card-hover);
     border-color: var(--border-glass-hover);
     transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(193, 154, 107, 0.1);
 }
 
 /* ===== Gradient Decorations ===== */
@@ -204,22 +212,27 @@ textarea {
     transition-delay: 0.6s;
 }
 
-/* ===== Scrollbar ===== */
+/* ===== Scrollbar — Warm Light Theme ===== */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-primary);
+    background: #FDFBF7;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 4px;
+    background: linear-gradient(180deg, rgba(193, 154, 107, 0.4), rgba(139, 107, 74, 0.4));
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(180deg, rgba(193, 154, 107, 0.6), rgba(139, 107, 74, 0.6));
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(193, 154, 107, 0.4) #FDFBF7;
 }
 
 /* ===== Responsive ===== */

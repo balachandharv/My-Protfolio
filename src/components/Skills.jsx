@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaPython, FaDatabase, FaGitAlt, FaGithub } from 'react-icons/fa';
+import { FaReact, FaJava, FaPython, FaDatabase, FaGitAlt, FaGithub } from 'react-icons/fa';
 import './Skills.css';
 
 const skills = [
-    { name: 'HTML5', level: '90%', icon: <FaHtml5 size={36} color="#E34F26" /> },
-    { name: 'CSS3', level: '85%', icon: <FaCss3Alt size={36} color="#1572B6" /> },
     { name: 'React', level: '65%', icon: <FaReact size={36} color="#61DAFB" /> },
     { name: 'Java (Core)', level: '75%', icon: <FaJava size={36} color="#ED8B00" /> },
     { name: 'Python', level: '60%', icon: <FaPython size={36} color="#3776AB" /> },

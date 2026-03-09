@@ -10,8 +10,8 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, var(--accent-primary), var(--accent-hover));
-    opacity: 0.3;
+    background: linear-gradient(to bottom, #C19A6B, #8B6B4A);
+    opacity: 0.2;
 }
 
 .timeline-item {
@@ -26,18 +26,31 @@
 
 .timeline-dot {
     position: absolute;
-    left: 16px;
-    top: 8px;
-    width: 18px;
-    height: 18px;
+    left: 14px;
+    top: 10px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: var(--accent-gradient);
-    border: 3px solid var(--bg-primary);
+    border: 4px solid #FDFBF7;
+    /* Match main background */
+    box-shadow: 0 0 0 2px rgba(193, 154, 107, 0.15);
     z-index: 1;
 }
 
 .timeline-card {
     padding: 24px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 8px rgba(27, 20, 16, 0.03);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-card {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(193, 154, 107, 0.1);
+    border-color: rgba(193, 154, 107, 0.3);
 }
 
 .timeline-year {
@@ -47,26 +60,29 @@
     margin-bottom: 8px;
     display: inline-block;
     padding: 4px 12px;
-    background: rgba(37, 99, 235, 0.08);
+    background: rgba(193, 154, 107, 0.1);
     border-radius: 20px;
 }
 
 .timeline-degree {
     font-family: var(--font-heading);
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--text-primary);
     margin-bottom: 6px;
 }
 
 .timeline-school {
     color: var(--text-secondary);
     font-size: 0.95rem;
-    margin-bottom: 4px;
+    font-weight: 500;
+    margin-bottom: 6px;
 }
 
 .timeline-details {
-    color: var(--text-muted);
+    color: var(--text-paragraph);
     font-size: 0.88rem;
+    line-height: 1.6;
 }
 
 @media (max-width: 768px) {
@@ -94,8 +110,9 @@
 
     .timeline-dot {
         left: 8px;
-        width: 14px;
-        height: 14px;
+        width: 18px;
+        height: 18px;
+        border-width: 3px;
     }
 
     .timeline-card {
