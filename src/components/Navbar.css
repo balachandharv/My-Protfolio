@@ -54,7 +54,7 @@
 }
 
 .navbar-logo img {
-    height: 85px;
+    height: 120px;
     width: auto;
     object-fit: contain;
     transition: transform var(--transition-normal);
@@ -156,7 +156,7 @@
     }
 
     .navbar-logo img {
-        height: 36px;
+        height: 70px;
     }
 
     .navbar-links {
@@ -186,6 +186,6 @@
 
 @media (max-width: 480px) {
     .navbar-logo img {
-        height: 32px;
+        height: 60px;
     }
 }

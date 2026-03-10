@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaArrowRight, FaDownload } from 'react-icons/fa';
 import './Hero.css';
 
-const roles = ['Developer', 'Designer', 'Student', 'Problem Solver'];
+const roles = ['Developer', 'Student', 'Problem Solver'];
 
 export default function Hero() {
     const [roleIndex, setRoleIndex] = useState(0);

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
+import useWeb3Forms from '@web3forms/react';
 import './Contact.css';
 
 export default function Contact() {
@@ -11,10 +12,39 @@ export default function Contact() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert(`Thanks ${formData.name}! Your message has been received.`);
-        setFormData({ name: '', email: '', message: '' });
+    const [submitStatus, setSubmitStatus] = useState("idle");
+    const [statusMessage, setStatusMessage] = useState("");
+    const { submit } = useWeb3Forms({
+        access_key: "1b474ff7-3718-4aad-a985-7d6f5cf2d3a9",
+        settings: {
+            from_name: "Portfolio Contact Form",
+            subject: "New Message from Portfolio",
+        },
+        onSuccess: (message, data) => {
+            setSubmitStatus("success");
+            setStatusMessage(`Thanks ${formData.name}! Your message has been sent successfully. I'll get back to you soon.`);
+            setFormData({ name: '', email: '', message: '' });
+
+            // Hide message after 5 seconds
+            setTimeout(() => setSubmitStatus("idle"), 5000);
+        },
+        onError: (message, data) => {
+            setSubmitStatus("error");
+            setStatusMessage(`Oops! Something went wrong: ${message}`);
+
+            // Hide message after 5 seconds
+            setTimeout(() => setSubmitStatus("idle"), 5000);
+        }
+    });
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setSubmitStatus("submitting");
+        submit({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+        });
     };
 
     return (
@@ -138,9 +168,29 @@ export default function Contact() {
                             className="form-submit"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
+                            disabled={submitStatus === "submitting"}
                         >
-                            Send Message
+                            {submitStatus === "submitting" ? "Sending..." : "Send Message"}
                         </motion.button>
+
+                        {submitStatus === "success" && (
+                            <motion.div
+                                className="form-message success"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
+                                {statusMessage}
+                            </motion.div>
+                        )}
+                        {submitStatus === "error" && (
+                            <motion.div
+                                className="form-message error"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
+                                {statusMessage}
+                            </motion.div>
+                        )}
                     </form>
                 </motion.div>
             </div>
