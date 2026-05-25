@@ -98,8 +98,8 @@ export default function Hero() {
                         <FaArrowRight size={16} />
                     </motion.a>
                     <motion.a
-                        href="/Bala_Resume.pdf"
-                        download="Bala_Resume.pdf"
+                        href="/Bala's Resume.pdf"
+                        download="Bala's Resume.pdf"
                         className="btn-resume"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}

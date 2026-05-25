@@ -36,7 +36,7 @@ export default function About() {
 
                         <div className="about-resume-actions">
                             <motion.a
-                                href="/Bala_Resume.pdf"
+                                href="/Bala's Resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="resume-btn resume-btn--view"
@@ -47,8 +47,8 @@ export default function About() {
                                 <span>View Resume</span>
                             </motion.a>
                             <motion.a
-                                href="/Bala_Resume.pdf"
-                                download="Bala_Resume.pdf"
+                                href="/Bala's Resume.pdf"
+                                download="Bala's Resume.pdf"
                                 className="resume-btn resume-btn--download"
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.95 }}
